@@ -7,6 +7,6 @@ assignees: dayoungee, yoseph0310
 
 ---
 
-1. 사이트 : Programmer/CodeTree/BOJ/SWEA
+1. 사이트 : Programmers/CodeTree/BOJ/SWEA
 2. 제목 : ex)미로 타워 디펜스
 3. 링크 : 문제링크
