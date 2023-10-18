@@ -1,0 +1,12 @@
+---
+name: "[YYMMDD] 문제사이트 - 문제이름"
+about: 사이트 - 문제 를 명시하고 링크를 남겨주세요.
+title: ''
+labels: ''
+assignees: dayoungee, yoseph0310
+
+---
+
+1. 사이트 : Programmer/CodeTree/BOJ/SWEA
+2. 제목 : ex)미로 타워 디펜스
+3. 링크 : 문제링크
