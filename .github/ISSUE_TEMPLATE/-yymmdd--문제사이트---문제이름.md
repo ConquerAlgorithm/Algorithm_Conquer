@@ -1,7 +1,7 @@
 ---
 name: "[YYMMDD] 문제사이트 - 문제이름"
 about: 사이트 - 문제 를 명시하고 링크를 남겨주세요.
-title: ''
+title: '[YYMMDD] 문제사이트 - 문제이름'
 labels: ''
 assignees: dayoungee, yoseph0310
 
