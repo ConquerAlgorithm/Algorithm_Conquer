@@ -19,11 +19,8 @@ public class Main {
     public static void main(String[] args) {
         init();
         while (true) {
-            for (int key : personList.keySet()) {
-                if (personList.get(key).isAlive && simulation(key))
-                    break;
-            }
             answer++;
+            simulation();
 
             boolean flag = true;
             for (Person person : personList.values()) {
@@ -40,15 +37,24 @@ public class Main {
         System.out.println(answer);
     }
 
-    private static boolean simulation(int index) {
-        Person person = personList.get(index);
-        if (!person.isStart) {
-            findCamp(index);
-            person.isStart = true;
-            return true;
-        } else {
+    private static void simulation() {
+        for(int index : personList.keySet()) {
+            if(!personList.get(index).isStart) continue;
             movePerson(index);
-            return false;
+        }
+
+        for(int key : personList.keySet()) {
+            Person person = personList.get(key);
+            Pair target = storeList.get(key);
+            if(person.isAlive && person.pair.x == target.x && person.pair.y == target.y) {
+                person.isAlive = false;
+                map[person.pair.y][person.pair.x] = 10;
+            }
+        }
+
+        if(answer <= m) {
+            findCamp(answer);
+            personList.get(answer).isStart = true;
         }
     }
 
@@ -71,10 +77,6 @@ public class Main {
         }
         person.pair.x = person.pair.x + dx[index];
         person.pair.y = person.pair.y + dy[index];
-        if(person.pair.x == target.x && person.pair.y == target.y) {
-            person.isAlive = false;
-            map[person.pair.y][person.pair.x] = 10;
-        }
     }
 
     private static boolean outRange(int x, int y) {
