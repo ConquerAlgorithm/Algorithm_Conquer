@@ -11,7 +11,7 @@
 ### 💻 학습 진행
 
 1. 취침 전 익일 문제를 당번이 Issue에 업데이트.
-   - 당번 순서 : 서요셉 > 윤다영
+   - 당번 순서 : 서요셉 > 윤다영 > 손록형
    - 출제 범위 : <[프로그래머스](https://programmers.co.kr/)> LV1 ~ LV3 | <[코드트리](https://www.codetree.ai/training-field/frequent-problems)> 삼성기출문제 위주 | <[백준](https://www.acmicpc.net/workbook/view/1152)> 특정 알고리즘이나 구현력에 도움되는 문제 위주.
 2. 이후 개인 브랜치에서 문제 풀이 진행.
 3. 제출된 문제 사이트 폴더 내의 `문제 이름 폴더` 생성.
