@@ -2,6 +2,7 @@ import java.util.*;
 
 class Solution {
     static Map<Long, Long> map = new HashMap<>();
+
     public long[] solution(long k, long[] room_number) {
         long[] answer = new long[room_number.length];
         int index = 0;
