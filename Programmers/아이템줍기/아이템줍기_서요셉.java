@@ -24,19 +24,14 @@ public class 아이템줍기 {
         int ans;
         int[][] board;
         boolean[][] internal;
-        Point start, end;
+        Programmers.LV3.아이템줍기.Solution.Point start, end;
 
         public int solution(int[][] rectangle, int characterX, int characterY, int itemX, int itemY) {
             board = new int[MAX_ROW * 2][MAX_COL * 2];
             internal = new boolean[MAX_ROW * 2][MAX_COL * 2];
 
-            start = new Point(characterX * 2, characterY * 2, 0);
-            end = new Point(itemX * 2, itemY * 2, 0);
-
-            int minX = Integer.MAX_VALUE;
-            int minY = Integer.MAX_VALUE;
-            int maxX = 0;
-            int maxY = 0;
+            start = new Programmers.LV3.아이템줍기.Solution.Point(characterX * 2, characterY * 2, 0);
+            end = new Programmers.LV3.아이템줍기.Solution.Point(itemX * 2, itemY * 2, 0);
 
             // 일단 주어진 입력대로 테두리만 그린다.
             for (int i = 0; i < rectangle.length; i++) {
@@ -54,14 +49,14 @@ public class 아이템줍기 {
         }
 
         void BFS() {
-            Queue<Point> q = new LinkedList<>();
+            Queue<Programmers.LV3.아이템줍기.Solution.Point> q = new LinkedList<>();
             boolean[][] visited = new boolean[MAX_ROW * 2][MAX_COL * 2];
 
-            q.add(new Point(start.x, start.y, 0));
+            q.add(new Programmers.LV3.아이템줍기.Solution.Point(start.x, start.y, 0));
             visited[start.x][start.y] = true;
 
             while (!q.isEmpty()) {
-                Point cur = q.poll();
+                Programmers.LV3.아이템줍기.Solution.Point cur = q.poll();
 
                 int cx = cur.x;
                 int cy = cur.y;
@@ -79,7 +74,7 @@ public class 아이템줍기 {
                     if (visited[nx][ny]) continue;
                     if (board[nx][ny] == 0) continue;
 
-                    q.add(new Point(nx, ny, cur.dist + 1));
+                    q.add(new Programmers.LV3.아이템줍기.Solution.Point(nx, ny, cur.dist + 1));
                     visited[nx][ny] = true;
                 }
             }
