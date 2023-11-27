@@ -21,14 +21,14 @@ public class 블록이동하기{
         }
     }
 
-    public int map[][];
+    public int[][] map;
     public int n, time;
 
-    public int dx[] = {-1,1,0,0};
-    public int dy[] = {0,0,-1,1};
+    public final int[] dx = {-1, 1, 0, 0};
+    public final int[] dy = {0, 0, -1, 1};
 
-    public boolean row[][];
-    public boolean col[][];
+    public boolean[][] row;
+    public boolean[][] col;
 
     public int solution(int[][] board) {
         n = board.length;
@@ -56,18 +56,23 @@ public class 블록이동하기{
         while(!q.isEmpty()) {
             Robot now = q.poll();
 
+            // 이동 or 회전 할 수있는 모든 경우를 다 돌았을 때
             if(now.dir == -1) {
                 count++;
+
+                // 아직 도착안했는데 Q에 경로가 남아있지 않다면 (도착하지 못하는 경우는 주어지지 않음)
                 if(!q.isEmpty())
                     q.add(new Robot(null, null, -1));
                 continue;
             }
 
+            // 한 점이라도 도착했을 시
             if((now.p1.x == n-1 && now.p1.y == n-1) || (now.p2.x == n-1 && now.p2.y == n-1)) {
                 time = count;
                 break;
             }
 
+            // 가로 상태에서 이동 or 회전
             if(now.dir == 0) {
                 for(int i = 0; i < 4; i++) {
                     int np1X = now.p1.x + dx[i];
@@ -105,6 +110,8 @@ public class 블록이동하기{
                     }
                 }
             }
+
+            // 세로 상태에서 이동 or 회전
             else {
                 for(int i = 0; i < 4; i++) {
                     int np1X = now.p1.x + dx[i];
