@@ -1,5 +1,3 @@
-package CodeTree.삼성스터디.메이즈러너;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -31,7 +29,7 @@ import java.util.StringTokenizer;
  *
  * - 정답 : 모든 참가자들의 이동 거리 합, 출구 좌표를 출력
  */
-public class 메이즈러너 {
+public class Main {
 
     static int N, M, K, moveCnt;
     static int[][] maze;
@@ -84,7 +82,6 @@ public class 메이즈러너 {
             if (isFinished()) break;
 
             rotate();
-            printBoard(maze);
         }
 
         int[] exit = findExit();
@@ -196,10 +193,6 @@ public class 메이즈러너 {
             if (minX != 0) break;
         }
 
-        System.out.println("minX = " + minX);
-        System.out.println("minY = " + minY);
-        System.out.println("minDist = " + minDist);
-        printBoard(maze);
         rotateMaze(minX, minY, minDist);
     }
 
