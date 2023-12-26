@@ -17,6 +17,7 @@ public class N으로표현 {
 
             for (int i = 2; i < 9; i++) {
                 Set<Integer> cntSet = cntList.get(i);
+                String strN = "";
 
                 for (int j = 1; j <= i; j++) {
                     Set<Integer> preSet = cntList.get(j);
@@ -31,9 +32,10 @@ public class N으로표현 {
                             if (num1 != 0 && num2 != 0) cntSet.add(num1 / num2);
                         }
                     }
+
+                    strN += String.valueOf(N);
                 }
 
-                String strN = String.valueOf(N) + String.valueOf(N);
                 cntSet.add(Integer.parseInt(strN));
             }
 
